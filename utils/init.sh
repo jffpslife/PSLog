@@ -6,5 +6,6 @@ set -e
 PLATFORMS=("bj")
 
 mkdir -p $MYDIRNAME
-cp $THISDIR/templates/basic.cpp $MYDIRNAME/$MYNAME.cpp
-cd $MYDIRNAME
+cp $THISDIR/templates/basic.cpp $THISDIR/$MYDIRNAME/$MYNAME.cpp
+
+mkdir -p $THISDIR/$MYDIRNAME/tests
