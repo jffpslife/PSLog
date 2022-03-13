@@ -8,6 +8,7 @@ Log for what I've solved until now
 
 ini
 com
+tst <number of tests>
 sav
 cln
 ```
