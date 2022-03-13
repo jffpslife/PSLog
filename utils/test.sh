@@ -1,9 +1,13 @@
 #!/bin/bash
 
-FILECOUNT=$(find $THISDIR/$MYDIRNAME/tests -type f | wc -l)
-LASTIDX=$((FILECOUNT - 1))
+N=$1
+N=$((N))
 
-for (( i=0; i<=$LASTIDX; i++)); do
+BIN=$THISDIR/$MYDIRNAME/$MYNAME
+TESTDIR=$THISDIR/$MYDIRNAME/tests
+
+for (( i=0; i<$N; i++)); do
 	echo "Test $i"
-	cat $THISDIR/$MYDIRNAME/tests/$i.txt | $THISDIR/$MYDIRNAME/$MYNAME
+	cat $TESTDIR/in-$i.txt | $BIN > $TESTDIR/res-$i.txt
+  diff $TESTDIR/res-$i.txt $TESTDIR/out-$i.txt
 done
