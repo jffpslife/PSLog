@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -rf $THISDIR/$MYDIRNAME
+rm -rf $THISDIR/cur
