@@ -1,3 +1,3 @@
 #!/bin/bash
 
-g++ -g -std=c++11 -o $THISDIR/cur/$MYNAME $THISDIR/cur/$MYNAME.cpp
+g++ -g -std=c++11 -o $MYDIRNAME/$MYNAME $MYDIRNAME/$MYNAME.cpp

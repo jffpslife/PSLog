@@ -3,8 +3,14 @@ THISFILE=$(realpath "$0")
 export THISDIR=$(dirname $THISFILE)
 
 export MYPLATFORM=$1
-export MYNAME=$2
-export MYDIRNAME=$MYPLATFORM-$MYNAME
+if [[ "bj" == $MYPLATFORM ]]; do
+  export MYNAME=$2
+  export MYDIRNAME=$THISDIR/cur
+else
+  export MYSET=$2
+  export MYNAME=$3
+  export MYDIRNAME=$THISDIR/$MYSET
+done
 
 alias ini=$THISDIR/utils/init.sh
 alias com=$THISDIR/utils/compile.sh

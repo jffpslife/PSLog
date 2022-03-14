@@ -3,8 +3,14 @@
 N=$1
 N=$((N))
 
-BIN=$THISDIR/cur/$MYNAME
-TESTDIR=$THISDIR/cur/tests
+if [[ "bj" == $MYPLATFORM ]]; do
+  DIRNAME=$THISDIR/cur
+else
+  DIRNAME=$THISDIR/$MYSET
+done
+
+BIN=$DIRNAME/$MYNAME
+TESTDIR=$DIRNAME/tests
 
 for (( i=0; i<$N; i++)); do
 	echo "Test $i"

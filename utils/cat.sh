@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat $THISDIR/cur/$MYNAME.cpp
+cat $MYDIRNAME/$MYNAME.cpp

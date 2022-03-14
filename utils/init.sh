@@ -5,7 +5,14 @@ set -e
 # Currently supported platforms
 PLATFORMS=("bj")
 
-mkdir -p $THISDIR/cur
-cp $THISDIR/templates/basic.cpp $THISDIR/cur/$MYNAME.cpp
+if [[ "bj" == $MYPLATFORM ]]; do
+  mkdir -p $MYDIRNAME
+  cp $THISDIR/templates/bj.cpp $MYDIRNAME/$MYNAME.cpp
 
-mkdir -p $THISDIR/cur/tests
+  mkdir -p $THISDIR/cur/tests
+else
+  mkdir -p $MYDIRNAME
+  cp $THISDIR/templates/other.cpp $MYDIRNAME/$MYNAME.cpp
+
+  mkdir -p $MYDIRNAME/tests
+done
