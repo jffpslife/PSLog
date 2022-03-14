@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ "bj" == $MYPLATFORM ]]; do
+if [[ "bj" == $MYPLATFORM ]]; then
   mkdir -p $THISDIR/$MYPLATFORM/$MYNAME
   cp $MYDIRNAME/$MYNAME.cpp $THISDIR/$MYPLATFORM/$MYNAME/$MYNAME.cpp
 else
   mkdir -p $THISDIR/$MYPLATFORM/$MYSET/$MYNAME
   cp $MYDIRNAME/$MYNAME.cpp $THISDIR/$MYPLATFORM/$MYSET/$MYNAME/$MYNAME.cpp
-done
+fi
