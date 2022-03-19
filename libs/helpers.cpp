@@ -71,3 +71,14 @@ int dp(char *S1, char *S2, int i, int j) {
 void lcs(char *S1, char *S2, int L1, int L2) {
   return dp(S1, S2, L1 - 1, L2 - 1);
 }
+
+// GCD
+// XXX: a >= b
+int gcd(int a, int b) {
+  int r = a % b;
+  if (r == 0) {
+    return b;
+  } else {
+    return gcd(b, r);
+  }
+}
