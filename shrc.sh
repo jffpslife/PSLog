@@ -9,7 +9,7 @@ if [[ "bj" == $MYPLATFORM ]]; then
 else
   export MYSET=$2
   export MYNAME=$3
-  export MYDIRNAME=$THISDIR/$MYSET
+  export MYDIRNAME=$THISDIR/$MYSET-$MYNAME
 fi
 
 alias ini=$THISDIR/utils/init.sh
