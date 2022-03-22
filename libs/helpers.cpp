@@ -72,13 +72,25 @@ void lcs(char *S1, char *S2, int L1, int L2) {
   return dp(S1, S2, L1 - 1, L2 - 1);
 }
 
-// GCD
-// XXX: a >= b
-int gcd(int a, int b) {
-  int r = a % b;
-  if (r == 0) {
+int egcd(int a, int b, int *x, int *y) {
+  if (a == 0) {
+    *x = 0;
+    *y = 1;
     return b;
   } else {
-    return gcd(b, r);
+    int x_, y_;
+    int g = egcd(b % a, a, &x_, &y_);
+
+    *x = y_ - (b / a) * x_;
+    *y = x_;
+
+    return g;
   }
+}
+
+int mod_inv(int a, int m) {
+  int x, y;
+  int g = egcd(a, m, &x, &y);
+  // Assume g is 1
+  return (x % m + m) % m;
 }
