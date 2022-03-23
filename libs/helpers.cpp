@@ -94,3 +94,31 @@ int mod_inv(int a, int m) {
   // Assume g is 1
   return (x % m + m) % m;
 }
+
+set<T> dfs_visited;
+list<T> dfs_edges[N];
+void dfs(T v) {
+  dfs_visited.insert(v);
+  for (auto s : dfs_edges[v]) {
+    if (dfs_visited.find(s) == dfs_visited.end()) {
+      dfs(s);
+    }
+  }
+}
+
+set<T> bfs_visited;
+list<T> bfs_queue;
+list<T> bfs_edges[N];
+void bfs(T v) {
+  bfs_queue.push_back(v);
+  while (!bfs_queue.empty()) {
+    int v = bfs_queue.front();
+    bfs_queue.pop_front();
+    if (bfs_visited.find(v) == bfs_visited.end()) {
+      bfs_visited.insert(v);
+      for (auto s : bfs_edges[v]) {
+        bfs_queue.push_back(s);
+      }
+    }
+  }
+}
