@@ -1,3 +1,6 @@
+// typedef. I'll use B
+typedef A B;
+
 // Merge Sort
 void merge(int left, int mid, int right) {
   int l = left;
